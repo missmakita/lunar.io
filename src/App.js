@@ -5,11 +5,13 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
-import Dialog from 'material-ui/Dialog';
+import DialogExampleModal from './components/modal'
+import events from './events'
 import FontAwesomeIcon from '@fortawesome/react-fontawesome'
 import { faGoogle } from '@fortawesome/fontawesome-free-brands'
 import Calendar from './components/Calendar';
-import logo from './images/logo.png';
+import { getEvents } from './gcal'
+import logo from './images/lgo.png';
 import './App.css';
 
 class App extends Component {
@@ -18,12 +20,12 @@ class App extends Component {
     this.state = {
       user: null, // <-- Google user
     }
-    console.log('constructor');
+    // console.log('constructor');
     this.login = this.login.bind(this); // <-- lo ligamos (bind) al constructor para cuando hagamos this.setState
     this.logout = this.logout.bind(this); // <-- tengamos acceso a this
   }
 
-  // Cierre de sesión
+// Cierre de sesión
   logout() {
     auth.signOut()
       .then(() => {
@@ -37,10 +39,14 @@ class App extends Component {
   login() {
     auth.signInWithPopup(provider)
       .then((result) => {
+        console.log(`${result.user.email} ha iniciado sesión`)
         const user = result.user;
-        this.setState({ user });
-      });
-  }
+        this.setState({
+          user
+        });
+        return(
+          <p>hola</p>
+        )
 
   componentDidMount() {
     // Verifica en la DB de Firebase si el usuario conectado ya estaba autenticado, si
@@ -48,6 +54,7 @@ class App extends Component {
     auth.onAuthStateChanged((user) => {
       if (user) {
         this.setState({ user });
+        console.log(user);
       }
     });
   }

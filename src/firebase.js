@@ -10,6 +10,7 @@ var config = {
   storageBucket: "lunar-io.appspot.com",
   messagingSenderId: "520700094193"
 };
+
 firebase.initializeApp(config);
 
 export const provider = new firebase.auth.GoogleAuthProvider();
