@@ -78,7 +78,6 @@ class App extends Component {
                       onClick={this.logout}
                       backgroundColor="#c7c7c7"
                       label="SALIR"
-                      //icon={<FontAwesomeIcon icon="fas-signoutalt" />}
                     />
                   </Col>
                 </Row>
@@ -93,7 +92,7 @@ class App extends Component {
               <footer>
                 <Row>
                   <Col sx={12} lg={12}>
-                    <p className="footer">Made with React @ 2018 Copyright VisakaDevi & Maka Fernández</p>
+                    <p className="footer">Made with React @ 2018 Copyright Visaka Devi & Maka Fernández</p>
                   </Col>
                 </Row>
               </footer>
@@ -104,7 +103,7 @@ class App extends Component {
             <Row>
               <Col xs={12} md={12}>
                 <div className="logo">
-                   <img className="appLogo" src={logo} alt="Lunar.io logo" />
+                  <img className="appLogo" src={logo} alt="Lunar.io logo" />
                 </div>
               </Col>
             </Row>
@@ -123,7 +122,7 @@ class App extends Component {
             </Row>
           </Grid>
         }
-      </MuiThemeProvider >
+      </MuiThemeProvider>
     );
   }
 }
