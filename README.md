@@ -21,4 +21,4 @@ Lunar.io es un calendario que informa las fases de Luna durante el año y te ent
 
 ## Autoras
 - [Maka Fernández](https://github.com/makafernandez)
-- [Visaka Devi](https://github.com/visedi)
+- [Visaka Devi](https://github.com/visidevi)
